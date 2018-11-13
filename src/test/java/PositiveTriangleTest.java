@@ -1,3 +1,4 @@
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import triangle.Triangle;
 
@@ -11,5 +12,12 @@ public class PositiveTriangleTest {
 
     }
 
+    @Test()
+    public void squareTest(){
+      double res = new Triangle(12, 8, 14).getSquare();
+      double p = (12 + 8 + 14) / 2.0;
+        double calc = Math.sqrt(p * (p - 12) * (p - 8) * (p - 14));
 
+        Assert.assertEquals(calc,res);
+    }
 }
