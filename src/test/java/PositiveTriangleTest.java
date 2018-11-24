@@ -18,6 +18,15 @@ public class PositiveTriangleTest {
         };
     }
 
+
+    @DataProvider(name = "incorrectInputs")
+    public Object[][]  incorrectInputsData(){
+        return new Object[][]{
+                {0.0, 0.0, 0.0},
+                {-0.002,-0.005,-0.006},
+        };
+    }
+
     @Test(dataProvider = "correctInputs")
         public void test(Double frst,Double scnd,Double thrd) {
         testTriangle = new Triangle(frst,  scnd, thrd);
@@ -26,16 +35,16 @@ public class PositiveTriangleTest {
 
     }
 
-    @Test()
-    public void squareTest(){
-      double res = new Triangle(12, 8, 14).getSquare();
-      double p = (12 + 8 + 14) / 2.0;
-        double calc = Math.sqrt(p * (p - 12) * (p - 8) * (p - 14));
+    @Test(dataProvider = "incorrectInputs")
+    public void squareTest(Double fs, Double sc, Double tgr){
+      double res = new Triangle(fs, sc, tgr).getSquare();
+      double p = (fs + sc + tgr) / 2.0;
+        double calc = Math.sqrt(p * (p - fs) * (p - sc) * (p - tgr));
 
         Assert.assertEquals(calc,res);
     }
 
-    @Test(expectedExceptions = Exception.class)
+    @Test()
     public void squareTestMaxVal(){
         double max = Double.MAX_VALUE;
         double res = new Triangle(max,max,max ).getSquare();
