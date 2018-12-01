@@ -51,7 +51,7 @@ public class PositiveTriangleTest {
     }
     //-------End positives tests for checkTriangle() and getMessage()-------
 
-    //-------Positives tests for DetectTriangle()-------
+    //-------Positives tests for detectTriangle()-------
     @Test(dataProvider = "ordinaryInputs", dataProviderClass = PositiveTriangleTestData.class)
     public void detectOrdinaryTriangle(double a, double b, double c) {
         Triangle ordTr = new Triangle(a, b, c);

@@ -2,7 +2,6 @@ import org.testng.annotations.DataProvider;
 
 public class NegativeTriangleTestData {
 
-
     @DataProvider(name = "inputsForNegativeTest")
     public Object[][] negGetSquareInputsValues() {
         return new Object[][]{

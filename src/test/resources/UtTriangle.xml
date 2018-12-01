@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Suite" parallel="false">
+<suite name="TriangleTests" parallel="false">
     <test name="Triangle">
         <classes>
             <class name="PositiveTriangleTest"/>
