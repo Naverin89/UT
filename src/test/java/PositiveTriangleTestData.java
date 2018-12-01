@@ -2,6 +2,12 @@ import org.testng.annotations.DataProvider;
 
 public class PositiveTriangleTestData {
 
+    static final int TR_EQUILATERAL = 1;
+    static final int TR_ISOSCELES = 2;
+    static final int TR_ORDYNARY = 4;
+    static final int TR_RECTANGULAR = 8;
+
+
     @DataProvider(name = "ordinaryInputs")
     public Object[][] ordinaryInputsValues() {
         return new Object[][]{
@@ -32,6 +38,7 @@ public class PositiveTriangleTestData {
     @DataProvider(name = "ordinaryRectangularInputs")
     public Object[][] ordinaryRectangularInputsValues() {
         return new Object[][]{
+                {3, 4, 5},
                 {0.00003, 0.00005, Math.sqrt((0.00003 * 0.00003) + (0.00005 * 0.00005))},
                 {Math.sqrt((6 * 6) + (5 * 5)), 6, 5},
                 {300.0, Math.sqrt((300.0 * 300.0) + (600.0 * 600.0)), 600.0},
@@ -41,6 +48,7 @@ public class PositiveTriangleTestData {
     @DataProvider(name = "isoscelesRectangularInputs")
     public Object[][] isoscelesRectangularInputsValues() {
         return new Object[][]{
+                {4.82,4.82,Math.sqrt((4.82*4.82)*2)},
                 {0.00006, 0.00006, Math.sqrt((0.00006 * 0.00006) * 2)},
                 {Math.sqrt((5 * 5) * 2), 5, 5},
                 {300.0, Math.sqrt((300.0 * 300.0) * 2), 300.0},
